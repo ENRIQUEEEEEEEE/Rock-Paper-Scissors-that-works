@@ -90,24 +90,24 @@
      <div id="parties">Games played: 0</div>
 
     <!-- Bouton reset -->
-    <div class="container">
-      <div class="bouton"> <button id="reset" onclick="resetScore()">Reset Score</button> </div>
-      <div class="texte">Heavenly music plays here</div>
-    </div>
+     <button id="reset" onclick="resetScore()">Reset Score</button> </div>
+    
+    
+    
     <!--Image qui change-->
-    <div>
     <img id="resultImage" src="" style="margin-top: 100px; width:200px; height:auto;" >
     </div>
-    <p class="texte">
-      Heavenly music plays here -->
-    </p>
-    <!--Audio mystique-->
-    <div>
-      <audio controls>
-        <source src="Picturerps/Nig.mp3" type="audio/mpeg">
-      </audio>
+    
+    <!--Audio mystique et texte-->
+    <div class="container">
+       <div class="audio">
+          <audio controls>
+           <source src="Picturerps/Nig.mp3" type="audio/mpeg">
+          </audio>
+       </div>
+       <div class="texte">Heavenly music plays here</div>
     </div>
-
+    
     <script>
       let playerScore = 0;
       let computerScore = 0;
@@ -190,6 +190,7 @@
     </script>
   </body>
 </html>
+
 
 
 
