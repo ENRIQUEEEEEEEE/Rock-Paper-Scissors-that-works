@@ -59,6 +59,11 @@
         color: white;
         font-size: 16px;
       }
+
+      .container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
     </style>
   </head>
   <body>
@@ -85,13 +90,17 @@
      <div id="parties">Games played: 0</div>
 
     <!-- Bouton reset -->
-    <button id="reset" onclick="resetScore()">Reset Score</button>
-
+    <div class="container">
+      <div class="bouton"> <button id="reset" onclick="resetScore()">Reset Score</button> </div>
+      <div class="texte">Heavenly music plays here</div>
+    </div>
     <!--Image qui change-->
     <div>
     <img id="resultImage" src="" style="margin-top: 100px; width:200px; height:auto;" >
     </div>
-
+    <p class="texte">
+      Heavenly music plays here -->
+    </p>
     <!--Audio mystique-->
     <div>
       <audio controls>
@@ -181,6 +190,7 @@
     </script>
   </body>
 </html>
+
 
 
 
