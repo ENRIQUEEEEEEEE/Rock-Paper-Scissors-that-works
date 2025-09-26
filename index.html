@@ -23,6 +23,14 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #121212;
+  color: white;
 }
 
 h1 {
@@ -117,6 +125,10 @@ audio {
   padding-top: 20px;
 }
 
+body.dark .sidebar {
+  background-color: #222;
+}
+
 .sidebar a {
   display: block;
   padding: 10px 20px;
@@ -160,7 +172,7 @@ audio {
 
 <h1>Rock Paper Scissors</h1>
 
-<!-- Boutons -->
+<!-- Boutons jeu-->
 <div class="buttons-wrapper"> 
   <button class="ButtonsRPS" onclick="playGame('rock')">
     <img src="Picturerps/Rock.jpg" alt="Rock" class="ButtonRPSimg">
@@ -193,11 +205,28 @@ audio {
 <div class="sidebar" id="sidebar">
   <a href="#"><span>Accueil</span></a>
   <a href="#"><span>Profil</span></a>
-  <a href="#"><span>Paramètres</span></a>
+  <a href="paramètres.html"><span>Paramètres</span></a>
   <a href="#"><span>Déconnexion</span></a>
 </div>
 
 <script>
+
+// Appliquer la préférence au chargement
+    if(localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark');
+    }
+
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        if(document.body.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
   sidebar.classList.toggle('collapsed');
