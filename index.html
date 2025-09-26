@@ -94,18 +94,19 @@ h1 {
   gap: 10px;
   justify-content: center;
   width: 100%;
+  
 }
 
 audio {
   width: 100%;
-  max-width: 300px;
+  max-width: 500px;
   height: 40px;
 }
 
 /* Sidebar */
 .sidebar {
   height: 100vh;
-  width: 250px;
+  width: 200px;
   background-color: #111;
   color: white;
   transition: width 0.3s;
@@ -135,6 +136,8 @@ audio {
   font-size: 24px;
   cursor: pointer;
   color: white;
+  position: fixed;
+  z-index: 1001;
 }
 
 .sidebar.collapsed {
@@ -186,8 +189,8 @@ audio {
 </div>
 
 <!-- Sidebar -->
+ <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
 <div class="sidebar" id="sidebar">
-  <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
   <a href="#"><span>Accueil</span></a>
   <a href="#"><span>Profil</span></a>
   <a href="#"><span>Paramètres</span></a>
@@ -265,4 +268,3 @@ function resetScore() {
 
 </body>
 </html>
-
