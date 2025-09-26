@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPS - Paramètres</title>
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3;
+}
+
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+/* Sidebar identique à index.html */
+.sidebar {
+  height: 100vh;
+  width: 250px;
+  background-color: #111;
+  color: white;
+  transition: width 0.3s background-color 0.3s;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  z-index: 1000;
+}
+
+body.dark .sidebar {
+  background-color: #222;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s;
+}
+.sidebar a:hover {
+  background-color: #575757;
+}
+
+/* Hamburger toggle */
+.toggle-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  z-index: 1001;
+}
+.sidebar.collapsed {
+  width: 60px;
+}
+.sidebar.collapsed a {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 18px;
+}
+.sidebar.collapsed a span {
+  display: none;
+}
+
+/* Contenu principal */
+.main {
+  margin-left: 260px; 
+  padding: 20px;
+}
+
+.themeToggle{
+  border: none;
+  height: 50px;
+  width: 200px;
+  border-radius: 30px;
+}
+</style>
+</head>
+<body>
+
+<div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+
+<div class="sidebar" id="sidebar">
+  <a href="Rockps.html"><span>Accueil</span></a>
+  <a><span>Profil</span></a>
+  <a><span>Paramètres</span></a>
+  <a><span>Déconnexion</span></a>
+</div>
+
+<div class="main">
+  <h1>Paramètres ⚙️</h1>
+  
+</div>
+
+<button class="themeToggle" id="themeToggle">Mode sombre</button>
+
+<script>
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('collapsed');
+}
+
+// Appliquer la préférence au chargement
+    if(localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark');
+    }
+
+    const toggle = document.getElementById('themeToggle');
+    toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        if(document.body.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+</script>
+</body>
+</html>
